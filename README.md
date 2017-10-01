@@ -1,7 +1,7 @@
 <p align="center">
   <img src="./src/icons/super-new-file-512.png" height="100px"/>
   <h1 align="center">Super New File</h1>
-  <h4 align="center">Create new file or folder from the selected text</h4>
+  <h4 align="center">Create new file and folder from the selected text</h4>
   <br>
 </p>
 
