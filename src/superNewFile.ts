@@ -1,6 +1,7 @@
 'use strict';
 import * as vscode from 'vscode';
 import { dirname, join, normalize } from 'path';
+import * as mkdfp from 'node-mkdirfilep';
 
 export function activate(context: vscode.ExtensionContext) {
 
@@ -36,10 +37,9 @@ export function activate(context: vscode.ExtensionContext) {
             // TODO: select only folders to be created ? 
             // get the workspace name and select everything after that ?
             valueSelection: [-1, -1]
-        }).then(() => {
+        }).then((modifiedPath) => {
             // create the file or folder
-            // mkdirp(text);
-            console.log("creating the folder");
+            mkdfp.create(modifiedPath);
         })
     });
 
