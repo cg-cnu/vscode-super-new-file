@@ -1,7 +1,7 @@
 {
-    "name": "super",
-    "displayName": "",
-    "description": "super",
+    "name": "super-new-file",
+    "displayName": "super-new-file",
+    "description": "super new file",
     "version": "0.0.1",
     "publisher": "cg-cnu",
     "engines": {
@@ -11,14 +11,14 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "onCommand:superNewFile.create"
     ],
-    "main": "./out/src/extension",
+    "main": "./out/src/superNewFile",
     "contributes": {
         "commands": [
             {
-                "command": "extension.sayHello",
-                "title": "Hello World"
+                "command": "superNewFile.create",
+                "title": "Super New File"
             }
         ]
     },
