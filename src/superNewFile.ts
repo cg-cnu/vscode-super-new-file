@@ -1,6 +1,6 @@
 'use strict';
 import * as vscode from 'vscode';
-import {lstatSync} from 'fs';
+import { lstatSync } from 'fs';
 import { dirname, join, normalize } from 'path';
 import * as mkdfp from 'node-mkdirfilep';
 
@@ -20,7 +20,7 @@ const expandVscodeVariables = (text: string) => {
 
 const expandPath = (inputPath: string) => {
 
-    let finalPath:string;
+    let finalPath: string;
     // get final path
     if (inputPath.startsWith('./') || inputPath.startsWith('../')) {
         // if the selected path starts with . or ..; it as relative path
@@ -52,14 +52,14 @@ export function activate(context: vscode.ExtensionContext) {
         const editor: vscode.TextEditor = vscode.window.activeTextEditor;
         // if no active text editor
         if (!editor) {
-            vscode.window.showWarningMessage("No file open.");
+            vscode.window.showErrorMessage("No file open.");
             return;
         }
 
         // get the selection 
         var selectedPath: string = editor.document.getText(editor.selection);
         // if no selcted path
-        if (!selectedPath){
+        if (!selectedPath) {
             vscode.window.showErrorMessage("No selected path");
             return;
         }
@@ -72,19 +72,25 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.window.showInputBox({
             value: selectedPath,
             ignoreFocusOut: true,
-            prompt: "Create file/folder?",
-            // TODO: select only folders to be created ? 
-            // get the workspace name and select everything after that ?
+            prompt: "Create ?",
             valueSelection: [-1, -1]
         }).then((modifiedPath) => {
             // create the file or folder
             if (modifiedPath) {
-                    mkdfp.create(modifiedPath);
+                mkdfp.create(modifiedPath);
+                // TODO: Error if the file/folder already exists
+                // TODO: Needed a callback from mkdfp
+                if (lstatSync(modifiedPath).isFile()) {
+                    vscode.workspace.openTextDocument(modifiedPath)
+                        .then((textDocument) => {
+                            if (textDocument) {
+                                vscode.window.showTextDocument(textDocument);
+                            }
+                            else {
+                                vscode.window.showErrorMessage("Couldn't open the document!");
+                            }
+                        });
                 }
-            // TODO: ask to open the file ? Open if its a file ? 
-            // Needed a callback from mkdfp
-            if( lstatSync(modifiedPath).isFile() ){
-                vscode.workspace.openTextDocument(modifiedPath)
             }
         })
     });
