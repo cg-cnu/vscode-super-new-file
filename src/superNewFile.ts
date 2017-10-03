@@ -1,6 +1,6 @@
 'use strict';
 import * as vscode from 'vscode';
-import { lstatSync } from 'fs';
+import { lstatSync, existsSync } from 'fs';
 import { dirname, join, normalize } from 'path';
 import * as mkdfp from 'node-mkdirfilep';
 
@@ -67,6 +67,9 @@ export function activate(context: vscode.ExtensionContext) {
         // TODO: refactor; looking ugly 
         selectedPath = trimSpecialChars(selectedPath);
         selectedPath = expandPath(selectedPath);
+        if(!selectedPath){
+            return;
+        }
         selectedPath = expandVscodeVariables(selectedPath);
 
         vscode.window.showInputBox({
@@ -78,7 +81,10 @@ export function activate(context: vscode.ExtensionContext) {
             // create the file or folder
             if (modifiedPath) {
                 mkdfp.create(modifiedPath);
-                // TODO: Error if the file/folder already exists
+                if (existsSync(modifiedPath)) {
+                    vscode.window.showWarningMessage("Path already exists.");
+                    return;
+                }
                 // TODO: Needed a callback from mkdfp
                 if (lstatSync(modifiedPath).isFile()) {
                     vscode.workspace.openTextDocument(modifiedPath)
