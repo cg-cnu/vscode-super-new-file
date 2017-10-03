@@ -1,17 +1,21 @@
 <p align="center">
   <img src="./src/icons/super-new-file-512.png" height="100px"/>
   <h1 align="center">Super New File</h1>
-  <h4 align="center">Create new file and folder from the selected text</h4>
+  <h4 align="center">Create new files and folders from the selected text</h4>
   <br>
 </p>
 
 ## Features
 
-* Create new file or folder
-* 
+* Create files and folders from the selected text in editor.
+* Path with trailing `/` will create a folder.
+* Path with out trailing `/` will be a file.
+* Expand `./`, `../`, `~/` with proper scopes.
+* Supports vscode variables like `${workspaceRoot}`.
 
 ## Inspiration:
 
+* [advanced new file](https://www.google.co.in/url?sa=t&rct=j&q=&esrc=s&source=web&cd=4&cad=rja&uact=8&ved=0ahUKEwim2ZSFzdPWAhXJsI8KHViGD0cQFgg6MAM&url=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dpatbenatar.advanced-new-file&usg=AOvVaw1VGJvnT70RLeBO1Q0lhTcK)
 
 ### Issue/Feedback:
 
