@@ -7,8 +7,10 @@ import * as mkdfp from 'node-mkdirfilep';
 
 const trimSpecialChars = (inputPath: string) => {
     // remove special characters from the selected path
-    const specialChars = ["'", '"', '(', ')', '[', ']', '*', '+', '!', '@', '#', '%', '^', '&', '=', '<', '>', '?', '`']
+    const specialChars = ["'", '"', '(', ')', '[', ']', '*', '+', '!', '@', '#', '%', '^', '&', '=', '<', '>', '?', '`', ':', ';', '?']
     specialChars.forEach(char => inputPath = inputPath.replace(char, ""))
+    // remove spaces from the begining and end of the path
+    inputPath = inputPath.trim()
     return inputPath
 }
 
@@ -64,7 +66,7 @@ export function activate(context: vscode.ExtensionContext) {
             return;
         }
 
-        // TODO: refactor; looking ugly 
+        // FIXME: refactor; looking ugly
         selectedPath = trimSpecialChars(selectedPath);
         selectedPath = expandPath(selectedPath);
         if(!selectedPath){
@@ -80,11 +82,11 @@ export function activate(context: vscode.ExtensionContext) {
         }).then((modifiedPath) => {
             // create the file or folder
             if (modifiedPath) {
-                mkdfp.create(modifiedPath);
                 if (existsSync(modifiedPath)) {
                     vscode.window.showWarningMessage("Path already exists.");
                     return;
                 }
+                mkdfp.create(modifiedPath);
                 // TODO: Needed a callback from mkdfp
                 if (lstatSync(modifiedPath).isFile()) {
                     vscode.workspace.openTextDocument(modifiedPath)
