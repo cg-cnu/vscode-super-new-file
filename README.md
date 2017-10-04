@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./src/icons/super-new-file-512.png" height="100px"/>
+  <img src="https://user-images.githubusercontent.com/2767425/31159245-56d62ce8-a8e5-11e7-85dd-f446ed05a11d.png" height="100px"/>
   <h1 align="center">Super New File</h1>
   <h4 align="center">Create new files and folders from the selected text</h4>
   <br>

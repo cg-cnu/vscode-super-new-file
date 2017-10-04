@@ -1,26 +1,38 @@
 {
     "name": "super-new-file",
     "displayName": "super-new-file",
-    "description": "super new file",
-    "version": "0.0.1",
+    "description": "Create new files and folders from the selected text",
+    "version": "0.0.2",
     "publisher": "cg-cnu",
     "engines": {
         "vscode": "^1.16.0"
     },
+    "author": {
+        "email": "sreenivas9alapati@gmail.com",
+        "name": "sreenivas alapati",
+        "url": "https://twitter.com/cgcnu"
+    },
     "categories": [
         "Other"
     ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cg-cnu/vscode-super-new-file"
+    },
+    "bugs": {
+        "url": "https://github.com/cg-cnu/vscode-super-new-file/issues",
+        "email": "sreenivas9alapati@gmail.com"
+    },
+    "license": "MIT",
     "activationEvents": [
         "onCommand:superNewFile.create"
     ],
     "main": "./out/src/superNewFile",
     "contributes": {
-        "commands": [
-            {
-                "command": "superNewFile.create",
-                "title": "Super New File"
-            }
-        ]
+        "commands": [{
+            "command": "superNewFile.create",
+            "title": "Super New File"
+        }]
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",
@@ -35,6 +47,17 @@
         "mocha": "^3.5.0",
         "@types/node": "^7.0.43",
         "@types/mocha": "^2.2.42"
+    },
+    "keywords": [
+        "file",
+        "folder",
+        "new",
+        "create"
+    ],
+    "preview": true,
+    "icon": "src/icons/super-new-file-512.png",
+    "galleryBanner": {
+        "color": "#ffdd00"
     },
     "dependencies": {
         "mkdirp": "^0.5.1",
