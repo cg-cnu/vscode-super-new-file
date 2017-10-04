@@ -2,7 +2,7 @@
     "name": "super-new-file",
     "displayName": "super-new-file",
     "description": "Create new files and folders from the selected text",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "cg-cnu",
     "engines": {
         "vscode": "^1.16.0"
@@ -54,10 +54,11 @@
         "new",
         "create"
     ],
-    "preview": true,
-    "icon": "src/icons/super-new-file-512.png",
+    "homepage": "https://github.com/cg-cnu/vscode-super-new-file",
+    "readme": "README.md",
+    "icon": "icons/super-new-file-128.png",
     "galleryBanner": {
-        "color": "#ffdd00"
+        "color": "#0D3F8A"
     },
     "dependencies": {
         "mkdirp": "^0.5.1",
