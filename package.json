@@ -37,6 +37,7 @@
         "@types/mocha": "^2.2.42"
     },
     "dependencies": {
-        "mkdirp": "^0.5.1"
+        "mkdirp": "^0.5.1",
+        "node-mkdirfilep": "^0.0.2"
     }
 }
