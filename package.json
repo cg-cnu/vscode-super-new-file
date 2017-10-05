@@ -1,8 +1,8 @@
 {
     "name": "super-new-file",
-    "displayName": "super-new-file",
+    "displayName": "Super New File",
     "description": "Create new files and folders from the selected text",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "publisher": "cg-cnu",
     "engines": {
         "vscode": "^1.16.0"
