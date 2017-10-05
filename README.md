@@ -5,7 +5,11 @@
   <br>
 </p>
 
-## Features
+## Demo:
+
+<img src="https://user-images.githubusercontent.com/2767425/31217080-63fa6e7c-a9d3-11e7-8f15-24f51ca4466c.gif"></img>
+
+## Features:
 
 * Create files and folders from the selected text in editor.
 * Path with trailing `/` will create a folder.
@@ -15,7 +19,7 @@
 
 ## Inspiration:
 
-* [advanced new file](https://www.google.co.in/url?sa=t&rct=j&q=&esrc=s&source=web&cd=4&cad=rja&uact=8&ved=0ahUKEwim2ZSFzdPWAhXJsI8KHViGD0cQFgg6MAM&url=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dpatbenatar.advanced-new-file&usg=AOvVaw1VGJvnT70RLeBO1Q0lhTcK)
+* [advanced new file](https://marketplace.visualstudio.com/items?itemName=patbenatar.advanced-new-file)
 
 ### Issue/Feedback:
 

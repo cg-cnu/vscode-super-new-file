@@ -52,7 +52,8 @@
         "file",
         "folder",
         "new",
-        "create"
+        "create",
+        "code"
     ],
     "homepage": "https://github.com/cg-cnu/vscode-super-new-file",
     "readme": "README.md",
